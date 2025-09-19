@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		2EFCD22A2E7DDAA6004BA6A9 /* Lab 12: STD::array */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab 12: STD::array"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EFCD2342E7DDD98004BA6A9 /* weather.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = weather.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +45,7 @@
 		2EFCD2212E7DDAA6004BA6A9 = {
 			isa = PBXGroup;
 			children = (
+				2EFCD2342E7DDD98004BA6A9 /* weather.txt */,
 				2EFCD22C2E7DDAA6004BA6A9 /* Lab 12: STD::array */,
 				2EFCD22B2E7DDAA6004BA6A9 /* Products */,
 			);

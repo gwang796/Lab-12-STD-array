@@ -17,8 +17,10 @@ using namespace std;
 const int SIZE = 30; //size of data file
 
 int main(int argc, const char * argv[]) {
+    system("ls");//checks what files i am accessing. debugging to try and access txt file
+    
     array <int,SIZE> weather;
-    ifstream inputFile("weather");
+    ifstream inputFile("weather.txt");
     if (!inputFile) {
         cout << "Error: Could not access input file" << endl;
         return 1;
@@ -29,6 +31,9 @@ int main(int argc, const char * argv[]) {
     inputFile.close();
     
     cout << "1. Size: " << weather.size() << endl;
+    cout << "2. Front: " << weather.front() << endl;
+    cout << "3. Back: " << weather.back() << endl;
+    cout << "4. Empty?: " << weather.empty() << endl;
     
     return 0;
 }
