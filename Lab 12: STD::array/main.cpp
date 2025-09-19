@@ -23,9 +23,15 @@ int main(int argc, const char * argv[]) {
         cout << "Error: Could not access input file" << endl;
         return 1;//exit program with error code
     }
+    
     //copies values from weather.txt to STD::array weather
+    //also checks to make sure there is enough elements to weather.txt
+    //or else returns an error
     for (int i = 0; i < SIZE; i++) {
-        inputFile >> weather[i];
+        if(!(inputFile >> weather[i])){
+            cout << "Not enough numeric values in data file (needed " << SIZE << " values" << endl;
+            return 1;
+        }
     }
     inputFile.close(); //close input file
     
