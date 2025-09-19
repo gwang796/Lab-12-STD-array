@@ -17,11 +17,9 @@ using namespace std;
 const int SIZE = 30; //size of data file
 
 int main(int argc, const char * argv[]) {
-    system("ls");//checks what files i am accessing. debugging to try and access txt file
-    
-    array <int,SIZE> weather;
-    ifstream inputFile("weather.txt");
-    if (!inputFile) {
+    array <int,SIZE> weather; //declaring STD::array weather
+    ifstream inputFile("weather.txt"); //accessing external data file with 30 elements
+    if (!inputFile) { //
         cout << "Error: Could not access input file" << endl;
         return 1;
     }
@@ -31,29 +29,32 @@ int main(int argc, const char * argv[]) {
     inputFile.close();
     
     cout << "1. Number of Days: " << weather.size() << endl;
-    cout << "2. First Day: " << weather.front() << endl;
-    cout << "3. Last Day: " << weather.back() << endl;
-    cout << "4. Empty?: " << weather.empty() << endl;
-    cout << "5. Highest Temperature: " << *max_element(weather.begin(),weather.end());
-    cout << "6. Lowest Temperature: " << *min_element(weather.begin(),weather.end());
-    cout << "7. Sum of temperatures: " << accumulate(weather.begin(),weather.end(),0);
+    cout << "\n2. First Day: " << weather.front() << endl;
+    cout << "\n3. Last Day: " << weather.back() << endl;
+    cout << "\n4. Empty?: " << weather.empty() << endl;
+    cout << "\n5. Highest Temperature: " << *max_element(weather.begin(),weather.end()) << endl;
+    cout << "\n6. Lowest Temperature: " << *min_element(weather.begin(),weather.end()) << endl;
+    cout << "\n7. Sum of temperatures: " << accumulate(weather.begin(),weather.end(),0) << endl;
+    array<int,7> week1;
+    for (int i = 0; i < 7; i++) {
+        week1[i] = weather[i];
+    }
+    cout << "\n8. Week 1: " << endl;
+    int day = 1;
+    for (int value : week1) {
+        cout << "Day " << (day) << ": " << value << endl;
+        day++;
+    }
     sort(weather.begin(),weather.end());
-    cout << "8. Sorted Weather Days: ";
+    cout << "\n9. Sorted Weather Days: ";
     for (int value: weather) {
-        cout << value << " " << endl;
+        cout << value << " ";
     }
     cout << endl;
     sort(weather.rbegin(),weather.rend());
-    cout << "9. Reverse Sorted Weather Days: ";
+    cout << "\n10. Reverse Sorted Weather Days: ";
     for (int value: weather) {
-        cout << value << " " << endl;
-    }
-    cout << endl;
-    array<int,7> week1;
-    fill(week1.begin(), week1.end(), 7);
-    cout << "10. Week 1: ";
-    for (int value : week1) {
-        cout << value << endl;
+        cout << value << " ";
     }
     cout << endl;
     return 0;
