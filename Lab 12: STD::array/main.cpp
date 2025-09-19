@@ -30,10 +30,31 @@ int main(int argc, const char * argv[]) {
     }
     inputFile.close();
     
-    cout << "1. Size: " << weather.size() << endl;
-    cout << "2. Front: " << weather.front() << endl;
-    cout << "3. Back: " << weather.back() << endl;
+    cout << "1. Number of Days: " << weather.size() << endl;
+    cout << "2. First Day: " << weather.front() << endl;
+    cout << "3. Last Day: " << weather.back() << endl;
     cout << "4. Empty?: " << weather.empty() << endl;
-    
+    cout << "5. Highest Temperature: " << *max_element(weather.begin(),weather.end());
+    cout << "6. Lowest Temperature: " << *min_element(weather.begin(),weather.end());
+    cout << "7. Sum of temperatures: " << accumulate(weather.begin(),weather.end(),0);
+    sort(weather.begin(),weather.end());
+    cout << "8. Sorted Weather Days: ";
+    for (int value: weather) {
+        cout << value << " " << endl;
+    }
+    cout << endl;
+    sort(weather.rbegin(),weather.rend());
+    cout << "9. Reverse Sorted Weather Days: ";
+    for (int value: weather) {
+        cout << value << " " << endl;
+    }
+    cout << endl;
+    array<int,7> week1;
+    fill(week1.begin(), week1.end(), 7);
+    cout << "10. Week 1: ";
+    for (int value : week1) {
+        cout << value << endl;
+    }
+    cout << endl;
     return 0;
 }
